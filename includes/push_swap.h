@@ -52,7 +52,7 @@ void				ft_lstadd_front2(t_stack **lst, t_stack *new);
 int					ft_lstsize2(t_stack *lst);
 
 //		--Init--
-void				ft_init(char **argv, t_stack **a);
+void				ft_init(int argc, char **argv, t_stack **a);
 void				split_init(char **argv, t_stack **a);
 void				unsplit_init(char **argv, t_stack **a);
 void				median_init(t_stack **s);

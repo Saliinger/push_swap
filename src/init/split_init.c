@@ -19,7 +19,7 @@ void	split_init(char **argv, t_stack **a)
 	t_stack	*new;
 	int		j;
 
-	temp = ft_split(argv[2], ' ');
+	temp = ft_split(argv[1], ' ');
 	i = 0;
 	j = 0;
 	while (temp[i])

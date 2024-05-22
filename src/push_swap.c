@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 	b = (t_stack **)malloc(sizeof(t_stack **));
 	*a = NULL;
 	*b = NULL;
-	ft_init(argv, a);
+	ft_init(argc, argv, a);
 	if (!is_sorted(a))
 		ft_sort(a, b);
 	ft_free(a);

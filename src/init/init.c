@@ -12,16 +12,11 @@
 
 #include "../../includes/push_swap.h"
 
-void	ft_init(char **argv, t_stack **a)
+void	ft_init(int argc, char **argv, t_stack **a)
 {
-	int	i;
-
-	i = 0;
-	while (argv[i])
-		i++;
-	if (i < 2)
+	if (argc < 2)
 		unsplit_init(argv, a);
-	else if (i == 2)
+	else if (argc == 2)
 		split_init(argv, a);
 	else
 		ft_error();

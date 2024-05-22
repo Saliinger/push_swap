@@ -19,6 +19,7 @@ bool	is_sorted(t_stack **a)
 
 	new = *a;
 	i = new->number;
+    ft_printf("is sorted");
 	while (new)
 	{
 		if (new->next == *a)
