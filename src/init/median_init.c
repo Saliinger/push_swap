@@ -27,5 +27,6 @@ void	median_init(t_stack **s)
 			temp->above_median = 1;
 		else
 			temp->above_median = 0;
+        temp = temp->next;
 	}
 }

@@ -43,11 +43,6 @@ int	pb(t_stack **b, t_stack **a)
 {
 	if (push(b, a) == -1)
 		return (-1);
-	ft_printf("pb\n", 1);
-	ft_printf("stack b\n");
-	ft_print(b);
-	ft_printf("stack a\n");
-	ft_print(a);
-	ft_printf("\n");
+	ft_printf("pb\n");
 	return (0);
 }

@@ -12,6 +12,8 @@
 
 #include "../../includes/push_swap.h"
 
+
+
 void	order(t_stack **s)
 {
 	t_stack	*temp;
@@ -47,13 +49,15 @@ void	ft_sort(t_stack **a, t_stack **b)
 		three_sort(a);
 	if (ft_lstsize2(*a) > 3)
 	{
-        ft_printf("sort > 3");
-		pb(a, b);
-		pb(a, b);
-		while (ft_lstsize2(*a) >= 3 && !is_sorted(a))
+		pb(b, a);
+		pb(b, a);
+		while (ft_lstsize2(*a) >= 3)
 		{
+            ft_printf("enter");
 			init_a(a, b);
+            ft_printf("init a");
 			a_b(a, b);
+            ft_printf("move a to b");
 		}
 		three_sort(a);
 		while (temp_b)

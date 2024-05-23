@@ -14,6 +14,7 @@
 
 void	index_init(t_stack **s)
 {
+
 	t_stack	*temp;
 	int		i;
 
@@ -23,5 +24,6 @@ void	index_init(t_stack **s)
 	{
 		temp->index = i;
 		i++;
+        temp = temp->next;
 	}
 }

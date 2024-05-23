@@ -36,5 +36,6 @@ void	push_cost_init(t_stack **a, t_stack **b)
 			else
 				i += ft_lstsize2(*b) - temp_a->target->index;
 		}
+        temp_a = temp_a->next;
 	}
 }
