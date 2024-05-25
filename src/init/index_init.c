@@ -22,8 +22,8 @@ void	index_init(t_stack **s)
 	i = 0;
 	while (temp)
 	{
+        i++;
 		temp->index = i;
-		i++;
         temp = temp->next;
 	}
 }

@@ -11,24 +11,49 @@
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
-
-void	reverse_ba(t_stack **a, t_stack **b, t_stack *cheapest)
+/*
+void	rotate_ba(t_stack **a, t_stack **b, t_stack *cheapest)
 {
-	t_stack	*temp_b;
-
-	temp_b = *b;
-	while (temp_b != cheapest)
+	while (*b != cheapest && *a != cheapest->target)
 		rr(a, b);
-	init_a(a, b);
+}
+
+void	reverse_rotate_ba(t_stack **a, t_stack **b, t_stack *cheapest)
+{
+	while (*b != cheapest && *a != cheapest->target)
+		rr(a, b);
 }
 
 void	b_a(t_stack **a, t_stack **b)
 {
 	t_stack	*cheapest;
 
-	cheapest = get_cheapest(a);
-	if (cheapest->above_median && cheapest->target->above_median)
-		rotate_ab(a, b, cheapest);
-	else if (!(cheapest->above_median) && !(cheapest->target->above_median))
-		reverse_ab(a, b, cheapest);
+	cheapest = get_cheapest(b);
+	if (cheapest->above_median == 1 && cheapest->target->above_median == 1)
+		rotate_ba(a, b, cheapest);
+	else if (cheapest->above_median != 1 && cheapest->target->above_median != 1)
+        reverse_rotate_ba(a, b, cheapest);
+    pa(a,b);
+}
+*/
+void	b_a(t_stack **a, t_stack **b)
+{
+        while (ft_lstsize2(*b) > 0) {
+        t_stack *max_b = is_max(b);
+        int max_index = max_b->index;
+        int size_b = ft_lstsize2(*b);
+
+        if (max_index <= size_b / 2) {
+            while (max_index > 0) {
+                rb(b);
+                max_index--;
+            }
+        } else {
+            while (max_index < size_b) {
+                rrb(b);
+                max_index++;
+            }
+        }
+        pa(a, b);
+    }
 }

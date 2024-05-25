@@ -21,9 +21,9 @@ void	split_init(char **argv, t_stack **a)
 
 	temp = ft_split(argv[1], ' ');
 	i = 0;
-	j = 0;
 	while (temp[i])
 	{
+        j = 0;
 		while (temp[i][j])
 		{
 			if (temp[i][j] >= '0' && temp[i][j] <= '9')

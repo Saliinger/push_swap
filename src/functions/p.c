@@ -31,11 +31,6 @@ int	pa(t_stack **a, t_stack **b)
 	if (push(a, b) == -1)
 		return (-1);
 	ft_printf("pa\n", 1);
-	ft_printf("stack b\n");
-	ft_print(b);
-	ft_printf("stack a\n");
-	ft_print(a);
-	ft_printf("\n");
 	return (0);
 }
 

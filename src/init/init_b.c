@@ -19,6 +19,7 @@ void	init_b(t_stack **a, t_stack **b)
 	median_init(a);
 	median_init(b);
 	target_init(b, a);
+    target_init(a, b);
 	push_cost_init(b, a);
-	cheapest_init(a);
+	cheapest_init(b);
 }

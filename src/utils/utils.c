@@ -37,11 +37,12 @@ void	ft_print(t_stack **stack)
 	temp = *stack;
 	while (temp)
 	{
-		ft_printf("%d\n", temp->number);
+		ft_printf("number : %d, index : %d, push cost : %d, above median : %d, target : %d\n", temp->number, temp->index, temp->push_cost, temp->above_median, temp->target->number);
 		if (temp->next == NULL)
 			break ;
 		temp = temp->next;
 	}
+    ft_printf("\n\n");
 }
 
 void	ft_error(void)
@@ -64,4 +65,20 @@ t_stack	*is_max(t_stack **s)
 		temp = temp->next;
 	}
 	return (max);
+}
+
+t_stack *is_min(t_stack **s)
+{
+	t_stack	*min;
+	t_stack	*temp;
+
+	min = ft_lstnew2(INT_MAX);
+	temp = *s;
+	while (temp)
+	{
+		if (temp->number < min->number)
+			min = temp;
+		temp = temp->next;
+	}
+	return (min);
 }

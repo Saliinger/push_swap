@@ -11,19 +11,27 @@
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+void print_stack(t_stack *temp)
+{
+	while (temp)
+	{
+		ft_printf("number : %d, index : %d, push cost : %d, above median : %d,  \n", temp->number, temp->index, temp->push_cost, temp->above_median);
+		if (temp->next == NULL)
+			break ;
+		temp = temp->next;
+	}
+}
 
 void	median_init(t_stack **s)
 {
 	int		i;
-	int		j;
 	t_stack	*temp;
 
-	j = 0;
 	temp = *s;
 	i = ft_lstsize2(temp) / 2;
 	while (temp)
 	{
-		if (i > j)
+		if (i >= temp->index)
 			temp->above_median = 1;
 		else
 			temp->above_median = 0;

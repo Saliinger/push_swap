@@ -42,30 +42,38 @@ void	order(t_stack **s)
 
 void	ft_sort(t_stack **a, t_stack **b)
 {
-	t_stack	*temp_b;
-
-	temp_b = *b;
 	if (ft_lstsize2(*a) <= 3)
 		three_sort(a);
 	if (ft_lstsize2(*a) > 3)
 	{
 		pb(b, a);
 		pb(b, a);
-		while (ft_lstsize2(*a) >= 3)
+		while (ft_lstsize2(*a) >= 4)
 		{
-            ft_printf("enter");
 			init_a(a, b);
-            ft_printf("init a");
-			a_b(a, b);
-            ft_printf("move a to b");
+            a_b(a, b);
 		}
 		three_sort(a);
-		while (temp_b)
+        init_b(a, b);
+        ft_printf("stack a\n");
+        ft_print(a);
+        ft_printf("stack b\n");
+        ft_print(b);
+		while (*b)
 		{
 			init_b(a, b);
 			b_a(a, b);
 		}
 	}
-	b_a(a, b);
-	order(a);
+    init_a(a, b);
+    //init_b(a, b);
+    ft_printf("after base sort \nstack a\n");
+    ft_print(a);
+    ft_printf("stack b\n");
+    ft_print(b);
+    order(a);
+    ft_printf("stack a\n");
+    ft_print(a);
+    ft_printf("stack b\n");
+    ft_print(b);
 }

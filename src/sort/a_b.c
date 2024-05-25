@@ -12,33 +12,44 @@
 
 #include "../../includes/push_swap.h"
 
-void	rotate_ab(t_stack **a, t_stack **b, t_stack *cheapest)
-{
-	t_stack	*temp_b;
-
-	temp_b = *b;
-	while (temp_b != cheapest)
-		rotate_rotate(a, b);
-	init_a(a, b);
+void rotate_ab(t_stack **a, t_stack **b, t_stack *cheapest) {
+    while (*a != cheapest || *b != cheapest->target)
+    {
+        while (*a != cheapest)
+        {
+            rotate_rotate(a, b);
+        }
+        if (*b != cheapest->target)
+            rb(b);
+    }
 }
 
-void	reverse_ab(t_stack **a, t_stack **b, t_stack *cheapest)
+void reverse_ab(t_stack **a, t_stack **b, t_stack *cheapest)
 {
-	t_stack	*temp_b;
-
-	temp_b = *b;
-	while (temp_b != cheapest)
-		rr(a, b);
-	init_a(a, b);
+    while (*a != cheapest || *b != cheapest->target)
+    {
+        if (*a != cheapest)
+            rra(a);
+        if (*b != cheapest->target)
+            rrb(b);
+    }
 }
 
-void	a_b(t_stack **a, t_stack **b)
+void a_b(t_stack **a, t_stack **b)
 {
-	t_stack	*cheapest;
+    t_stack *cheapest;
 
-	cheapest = get_cheapest(a);
-	if (cheapest->above_median && cheapest->target->above_median)
-		rotate_ab(a, b, cheapest);
-	else if (!(cheapest->above_median) && !(cheapest->target->above_median))
-		reverse_ab(a, b, cheapest);
+    cheapest = get_cheapest(a);
+    printf("CHEAPEST : number : %d, index : %d, push cost : %d, above median : %d, target : %d\n",
+           cheapest->number, cheapest->index, cheapest->push_cost, cheapest->above_median, cheapest->target->number);
+    if (cheapest->above_median == 1 && cheapest->target->above_median == 1)
+        rotate_ab(a, b, cheapest);
+    else if (cheapest->above_median != 1 && cheapest->target->above_median != 1)
+        reverse_ab(a, b, cheapest);
+    pb(b, a);
+    printf("stack a\n");
+    ft_print(a);
+    printf("stack b\n");
+    init_b(b, a);
+    ft_print(b);
 }

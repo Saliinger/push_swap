@@ -29,7 +29,6 @@ typedef struct s_stack
 	int				above_median;
 	int				cheapest;
 	struct s_stack	*target;
-	struct s_stack	*prev;
 	struct s_stack	*next;
 }					t_stack;
 //		--Functions--
@@ -37,11 +36,14 @@ typedef struct s_stack
 //		--Sort--
 void				three_sort(t_stack **a);
 bool				is_sorted(t_stack **a);
+bool                is_sorted_big_to_low(t_stack **a);
 t_stack				*get_cheapest(t_stack **s);
 void				a_b(t_stack **a, t_stack **b);
 void				reverse_ab(t_stack **a, t_stack **b, t_stack *cheapest);
 void				rotate_ab(t_stack **a, t_stack **b, t_stack *cheapest);
 void				ft_sort(t_stack **a, t_stack **b);
+void                rotate_ba(t_stack **a, t_stack **b, t_stack *cheapest);
+void	            reverse_rotate_ba(t_stack **a, t_stack **b, t_stack *cheapest);
 void				b_a(t_stack **a, t_stack **b);
 
 //      --t_list--
@@ -87,5 +89,6 @@ void				ft_free(t_stack **stack);
 void				ft_print(t_stack **a);
 void				ft_error(void);
 t_stack				*is_max(t_stack **s);
+t_stack             *is_min(t_stack **s);
 
 #endif

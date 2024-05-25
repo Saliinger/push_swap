@@ -14,14 +14,14 @@
 
 t_stack	*get_cheapest(t_stack **s)
 {
-	t_stack	*temp;
+    t_stack *temp = *s;
+    t_stack *cheapest = temp;
 
-	temp = *s;
-	while (temp)
-	{
-		if (temp->cheapest == 1)
-			return (temp);
-		temp = temp->next;
-	}
-	return (temp);
+    while (temp) {
+        if (temp->push_cost < cheapest->push_cost) {
+            cheapest = temp;
+        }
+        temp = temp->next;
+    }
+    return cheapest;
 }
