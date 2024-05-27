@@ -19,16 +19,13 @@ int reverse_rotate(t_stack **stack)
 
     if (ft_lstsize2(*stack) < 2)
         return (-1);
-
     second_last = *stack;
     while (second_last->next && second_last->next->next)
         second_last = second_last->next;
-
     last = second_last->next;
     second_last->next = NULL;
     last->next = *stack;
     *stack = last;
-
     return (0);
 }
 

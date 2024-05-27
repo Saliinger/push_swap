@@ -60,10 +60,11 @@ void				unsplit_init(char **argv, t_stack **a);
 void				median_init(t_stack **s);
 void				index_init(t_stack **s);
 void				push_cost_init(t_stack **a, t_stack **b);
-void				target_init(t_stack **a, t_stack **b);
+void				target_a_init(t_stack **a, t_stack **b);
 void				cheapest_init(t_stack **s);
 void				init_b(t_stack **a, t_stack **b);
 void				init_a(t_stack **a, t_stack **b);
+void                target_b_init(t_stack **a, t_stack **b);
 
 //		--Rotate--
 int					rotate(t_stack **stack);
@@ -87,6 +88,7 @@ int					sb(t_stack **b);
 //		--Utils--
 void				ft_free(t_stack **stack);
 void				ft_print(t_stack **a);
+void	            ft_print_no(t_stack **stack);
 void				ft_error(void);
 t_stack				*is_max(t_stack **s);
 t_stack             *is_min(t_stack **s);

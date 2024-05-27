@@ -45,6 +45,23 @@ void	ft_print(t_stack **stack)
     ft_printf("\n\n");
 }
 
+void	ft_print_no(t_stack **stack)
+{
+	t_stack	*temp;
+
+	if (!stack || !*stack)
+		return ;
+	temp = *stack;
+	while (temp)
+	{
+		ft_printf("number : %d, index : %d, push cost : %d, above median : %d\n", temp->number, temp->index, temp->push_cost, temp->above_median);
+		if (temp->next == NULL)
+			break ;
+		temp = temp->next;
+	}
+    ft_printf("\n\n");
+}
+
 void	ft_error(void)
 {
 	ft_printf("ERROR");

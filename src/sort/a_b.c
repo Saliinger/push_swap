@@ -12,26 +12,31 @@
 
 #include "../../includes/push_swap.h"
 
-void rotate_ab(t_stack **a, t_stack **b, t_stack *cheapest) {
-    while (*a != cheapest || *b != cheapest->target)
-    {
-        while (*a != cheapest)
-        {
-            rotate_rotate(a, b);
-        }
-        if (*b != cheapest->target)
+void rotate_ab(t_stack **a, t_stack **b, t_stack *cheapest)
+{
+    while (*a != cheapest)
+        ra(a);
+    if(cheapest->target->above_median == 1) {
+        while (*b != cheapest->target)
+            rrb(b);
+    }
+    else {
+        while (*b != cheapest->target)
             rb(b);
     }
 }
 
 void reverse_ab(t_stack **a, t_stack **b, t_stack *cheapest)
 {
-    while (*a != cheapest || *b != cheapest->target)
-    {
-        if (*a != cheapest)
-            rra(a);
-        if (*b != cheapest->target)
+    while (*a != cheapest)
+        rra(a);
+    if(cheapest->target->above_median == 1) {
+        while (*b != cheapest->target)
             rrb(b);
+    }
+    else {
+        while (*b != cheapest->target)
+            rb(b);
     }
 }
 
@@ -50,6 +55,5 @@ void a_b(t_stack **a, t_stack **b)
     printf("stack a\n");
     ft_print(a);
     printf("stack b\n");
-    init_b(b, a);
-    ft_print(b);
+    ft_print_no(b);
 }

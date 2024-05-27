@@ -54,11 +54,10 @@ void	ft_sort(t_stack **a, t_stack **b)
             a_b(a, b);
 		}
 		three_sort(a);
-        init_b(a, b);
         ft_printf("stack a\n");
         ft_print(a);
         ft_printf("stack b\n");
-        ft_print(b);
+        ft_print_no(b);
 		while (*b)
 		{
 			init_b(a, b);
