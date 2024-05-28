@@ -38,9 +38,9 @@ void target_a_init(t_stack **a, t_stack **b)
         {
             while (temp_b)
             {
-                if (temp_a->number < temp_b->number)
+                if (temp_a->number > temp_b->number)
                 {
-                    diff = temp_b->number - temp_a->number;
+                    diff = temp_a->number - temp_b->number;
                     if (diff < match_diff)
                     {
                         match_diff = diff;

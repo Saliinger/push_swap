@@ -16,26 +16,17 @@
 
 void	order(t_stack **s)
 {
-	t_stack	*temp;
 	t_stack	*min;
 
-	temp = *s;
-	min = ft_lstnew2(INT_MAX);
-	while (temp)
-	{
-		if (temp->number < min->number)
-			min = temp;
-		temp = temp->next;
-	}
-	temp = *s;
+    min = is_min(s);
 	if (min->above_median)
 	{
-		while (temp != min)
+		while (*s != min)
 			ra(s);
 	}
 	else
 	{
-		while (temp != min)
+		while (*s != min)
 			rra(s);
 	}
 }
@@ -54,10 +45,7 @@ void	ft_sort(t_stack **a, t_stack **b)
             a_b(a, b);
 		}
 		three_sort(a);
-        ft_printf("stack a\n");
-        ft_print(a);
-        ft_printf("stack b\n");
-        ft_print_no(b);
+        init_b(a, b);
 		while (*b)
 		{
 			init_b(a, b);
@@ -65,14 +53,5 @@ void	ft_sort(t_stack **a, t_stack **b)
 		}
 	}
     init_a(a, b);
-    //init_b(a, b);
-    ft_printf("after base sort \nstack a\n");
-    ft_print(a);
-    ft_printf("stack b\n");
-    ft_print(b);
     order(a);
-    ft_printf("stack a\n");
-    ft_print(a);
-    ft_printf("stack b\n");
-    ft_print(b);
 }

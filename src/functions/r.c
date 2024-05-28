@@ -34,9 +34,6 @@ int	ra(t_stack **a)
 	if (rotate(a) == -1)
 		return (-1);
 	ft_printf("ra\n", 1);
-	ft_printf("stack a\n");
-	ft_print(a);
-	ft_printf("\n");
 	return (0);
 }
 

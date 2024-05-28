@@ -1,26 +1,40 @@
 #include "../../includes/push_swap.h"
 
-void target_b_init(t_stack **a, t_stack **b) {
-    t_stack *temp_a = *a;
+void target_b_init(t_stack **a, t_stack **b)
+{
+    t_stack *temp_a;
     t_stack *temp_b;
-    t_stack *max_b;
-    long match;
+    t_stack *max_a;
+    t_stack *min_a;
+    long match_diff;
+    long diff;
 
-    max_b = is_max(b);
-
-    while (temp_a) {
-        temp_b = *b;
-        match = LONG_MIN;
-        temp_a->target = max_b; // Default to the max in B if no smaller number is found
-
-        while (temp_b) {
-            if (temp_a->number > temp_b->number && temp_b->number > match) {
-                match = temp_b->number;
-                temp_a->target = temp_b;
+    max_a = is_max(a);
+    min_a = is_min(a);
+    temp_b = *b;
+    while (temp_b)
+    {
+        temp_a = *a;
+        match_diff = LONG_MAX;
+        temp_b->target = max_a;
+        if (temp_b->number > max_a->number || temp_b->number < min_a->number)
+            temp_b->target = min_a;
+        else
+        {
+            while (temp_a)
+            {
+                if (temp_a->number > temp_b->number)
+                {
+                    diff = temp_a->number - temp_b->number;
+                    if (diff < match_diff)
+                    {
+                        match_diff = diff;
+                        temp_b->target = temp_a;
+                    }
+                }
+                temp_a = temp_a->next;
             }
-            temp_b = temp_b->next; // Move to the next node in stack B
         }
-
-        temp_a = temp_a->next; // Move to the next node in stack A
+        temp_b = temp_b->next;
     }
 }
