@@ -13,3 +13,7 @@ for j -> 0 to k<br />
 
 
 # c42 -L./LibFt/compiled ./src/functions/*.c ./src/utils/*.c ./src/push_swap.c -lft -lprintf -lgnl
+
+
+# tools
+python3 -m push_swap_gui
