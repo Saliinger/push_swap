@@ -6,16 +6,16 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 16:26:27 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/24 23:18:10 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/28 14:32:12 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
-void print_stack(t_stack *temp)
+
+void	print_stack(t_stack *temp)
 {
 	while (temp)
 	{
-		ft_printf("number : %d, index : %d, push cost : %d, above median : %d,  \n", temp->number, temp->index, temp->push_cost, temp->above_median);
 		if (temp->next == NULL)
 			break ;
 		temp = temp->next;
@@ -35,6 +35,6 @@ void	median_init(t_stack **s)
 			temp->above_median = 1;
 		else
 			temp->above_median = 0;
-        temp = temp->next;
+		temp = temp->next;
 	}
 }

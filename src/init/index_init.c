@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 16:23:23 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/24 16:25:01 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/28 14:31:51 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	index_init(t_stack **s)
 {
-
 	t_stack	*temp;
 	int		i;
 
@@ -23,7 +22,7 @@ void	index_init(t_stack **s)
 	while (temp)
 	{
 		temp->index = i;
-        temp = temp->next;
-        i++;
+		temp = temp->next;
+		i++;
 	}
 }

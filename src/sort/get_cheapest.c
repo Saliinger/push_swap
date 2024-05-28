@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 22:25:57 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/24 23:43:16 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/28 14:34:31 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,18 @@
 
 t_stack	*get_cheapest(t_stack **s)
 {
-    t_stack *temp = *s;
-    t_stack *cheapest = temp;
+	t_stack	*temp;
+	t_stack	*cheapest;
 
-    while (temp) {
-        if (temp->push_cost < cheapest->push_cost) {
-            cheapest = temp;
-        }
-        temp = temp->next;
-    }
-    return cheapest;
+	temp = *s;
+	cheapest = temp;
+	while (temp)
+	{
+		if (temp->push_cost < cheapest->push_cost)
+		{
+			cheapest = temp;
+		}
+		temp = temp->next;
+	}
+	return (cheapest);
 }

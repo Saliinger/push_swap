@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 15:05:10 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/24 23:23:42 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/28 14:32:22 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	split_init(char **argv, t_stack **a)
 	i = 0;
 	while (temp[i])
 	{
-        j = 0;
+		j = 0;
 		while (temp[i][j])
 		{
 			if (temp[i][j] >= '0' && temp[i][j] <= '9')

@@ -3,7 +3,10 @@
     "*.embeddedhtml": "html",
     "push_swap.h": "c",
     "libft.h": "c",
-    "unistd.h": "c"
+    "unistd.h": "c",
+    "span": "c",
+    "type_traits": "c",
+    "random": "c"
   },
   "C_Cpp.errorSquiggles": "disabled",
   "makefile.launchConfigurations": [

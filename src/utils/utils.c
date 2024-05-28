@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 21:20:52 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/24 23:10:31 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/28 14:34:59 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,40 +27,6 @@ void	ft_free(t_stack **stack)
 		temp = next;
 	}
 }
-
-//void	ft_print(t_stack **stack)
-//{
-//	t_stack	*temp;
-//
-//	if (!stack || !*stack)
-//		return ;
-//	temp = *stack;
-//	while (temp)
-//	{
-//		ft_printf("number : %d, index : %d, push cost : %d, above median : %d, target : %d\n", temp->number, temp->index, temp->push_cost, temp->above_median, temp->target->number);
-//		if (temp->next == NULL)
-//			break ;
-//		temp = temp->next;
-//	}
-//    ft_printf("\n\n");
-//}
-//
-//void	ft_print_no(t_stack **stack)
-//{
-//	t_stack	*temp;
-//
-//	if (!stack || !*stack)
-//		return ;
-//	temp = *stack;
-//	while (temp)
-//	{
-//		ft_printf("number : %d, index : %d, push cost : %d, above median : %d\n", temp->number, temp->index, temp->push_cost, temp->above_median);
-//		if (temp->next == NULL)
-//			break ;
-//		temp = temp->next;
-//	}
-//    ft_printf("\n\n");
-//}
 
 void	ft_error(void)
 {
@@ -84,7 +50,7 @@ t_stack	*is_max(t_stack **s)
 	return (max);
 }
 
-t_stack *is_min(t_stack **s)
+t_stack	*is_min(t_stack **s)
 {
 	t_stack	*min;
 	t_stack	*temp;
