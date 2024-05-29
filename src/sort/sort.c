@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 15:23:52 by anoukan           #+#    #+#             */
-/*   Updated: 2024/05/28 15:04:04 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/29 17:07:36 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,21 @@ void	order(t_stack **s)
 	}
 }
 
+// static void	ft_print(t_stack **s)
+// {
+// 	while (*s)
+// 	{
+// 		ft_printf("%d\n", (*s)->number);
+// 		(*s) = (*s)->next;
+// 	}
+// }
+
 void	ft_sort(t_stack **a, t_stack **b)
 {
 	if (ft_lstsize2(*a) <= 3)
 		three_sort(a);
 	else if (ft_lstsize2(*a) > 3)
 	{
-
 		pb(b, a);
 		pb(b, a);
 		while (ft_lstsize2(*a) >= 4)
@@ -51,6 +59,7 @@ void	ft_sort(t_stack **a, t_stack **b)
 			b_a(a, b);
 		}
 	}
-	init_a(a, b);
 	order(a);
+	ft_free(a);
+	ft_free(b);
 }

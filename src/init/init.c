@@ -6,11 +6,24 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 14:59:11 by anoukan           #+#    #+#             */
-/*   Updated: 2024/05/29 14:01:36 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/29 16:50:02 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
+static void	free_num_lst(char **lst)
+{
+	int	i;
+
+	i = 0;
+	while (lst[i])
+	{
+		free(lst[i]);
+		i++;
+	}
+	free(lst);
+}
 
 void	ft_init(int argc, char **argv, t_stack **a)
 {
@@ -34,4 +47,6 @@ void	ft_init(int argc, char **argv, t_stack **a)
 		ft_lstadd_front2(a, new);
 		i++;
 	}
+	if (argc == 2)
+		free_num_lst(num_lst);
 }

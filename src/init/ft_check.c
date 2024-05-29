@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 13:30:46 by anoukan           #+#    #+#             */
-/*   Updated: 2024/05/29 13:52:54 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/29 16:52:07 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,8 @@ static bool	in_limits(char **argv)
 	i = 1;
 	while (argv[i])
 	{
-		ft_printf("number : %d\n", ft_atoi(argv[i]));
 		if (ft_atoi(argv[i]) > INT_MAX || ft_atoi(argv[i]) < INT_MIN)
-		{
-			ft_printf("false\n");
 			return (false);
-		}
 		i++;
 	}
 	return (true);
@@ -65,6 +61,7 @@ static void	free_num(char **num_lst)
 		free(num_lst[i]);
 		i++;
 	}
+	free(num_lst);
 }
 
 void	check_in(int argc, char **argv)
@@ -80,5 +77,6 @@ void	check_in(int argc, char **argv)
 		free_num(num_lst);
 		ft_error();
 	}
-	free_num(num_lst);
+	if (argc == 2)
+		free_num(num_lst);
 }

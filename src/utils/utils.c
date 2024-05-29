@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 21:20:52 by anoukan           #+#    #+#             */
-/*   Updated: 2024/05/29 13:45:25 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/29 17:07:13 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,16 @@
 void	ft_free(t_stack **stack)
 {
 	t_stack	*temp;
+	t_stack	*next;
 
 	if (!stack)
 		return ;
-	while (*stack)
+	temp = *stack;
+	while (temp)
 	{
-		temp =*stack;
-        *stack = (*stack)->next;
+		next = temp->next;
 		free(temp);
+		temp = next;
 	}
 	free(stack);
 }
@@ -64,3 +66,4 @@ t_stack	*is_min(t_stack **s)
 	}
 	return (min);
 }
+

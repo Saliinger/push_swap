@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 20:25:06 by anoukan           #+#    #+#             */
-/*   Updated: 2024/05/28 14:32:28 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/29 16:26:36 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 // initialise target in the stack a
 
 // the target is the closest lowest and if there is none closet lowest it'll target the is_max(b)
+
 void	target_a_init(t_stack **a, t_stack **b)
 {
 	t_stack	*temp_a;

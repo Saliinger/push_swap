@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 22:24:07 by anoukan           #+#    #+#             */
-/*   Updated: 2024/05/28 14:34:23 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/29 15:19:57 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,5 @@ void	a_b(t_stack **a, t_stack **b)
 	else
 		reverse_ab(a, b, cheapest);
 	pb(b, a);
+	free(cheapest);
 }
