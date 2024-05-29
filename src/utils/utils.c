@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 21:20:52 by anoukan           #+#    #+#             */
-/*   Updated: 2024/05/29 17:07:13 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/29 17:23:09 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,17 +53,20 @@ t_stack	*is_max(t_stack **s)
 
 t_stack	*is_min(t_stack **s)
 {
-	t_stack	*min;
+	int		min;
+	t_stack	*goodcase;
 	t_stack	*temp;
 
-	min = ft_lstnew2(INT_MAX);
+	min = INT_MAX;
 	temp = *s;
 	while (temp)
 	{
-		if (temp->number < min->number)
-			min = temp;
+		if (temp->number < min)
+		{
+			goodcase = temp;
+			min = temp->number;
+		}
 		temp = temp->next;
 	}
-	return (min);
+	return (temp);
 }
-

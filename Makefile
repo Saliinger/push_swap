@@ -6,7 +6,7 @@
 #    By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/23 14:36:40 by anoukan           #+#    #+#              #
-#    Updated: 2024/05/29 16:44:44 by anoukan          ###   ########.fr        #
+#    Updated: 2024/05/29 17:16:56 by anoukan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ OBJ_INIT = $(INIT:%.c=%.o)
 OBJ = $(OBJ_SRC) $(OBJ_FUNCTION) $(OBJ_UTILS) $(OBJ_INIT) $(OBJ_SORT)
 
 # Compilation flags
-FLAGS = -Wall -Wextra -Werror #-g3 -fsanitize=address
+FLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
 
 # Library flags
 LIBS = -L./libft/ -lft
