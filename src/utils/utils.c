@@ -37,24 +37,28 @@ void	ft_error(void)
 
 t_stack	*is_max(t_stack **s)
 {
-	t_stack	*max;
+    int     max;
+	t_stack	*stack_max;
 	t_stack	*temp;
 
-	max = ft_lstnew2(INT_MIN);
+	max = INT_MIN;
 	temp = *s;
 	while (temp)
 	{
-		if (temp->number > max->number)
-			max = temp;
+		if (temp->number > max)
+        {
+            max = temp->number;
+            stack_max = temp;
+        }
 		temp = temp->next;
 	}
-	return (max);
+	return (stack_max);
 }
 
 t_stack	*is_min(t_stack **s)
 {
 	int		min;
-	t_stack	*goodcase;
+	t_stack	*stack_min;
 	t_stack	*temp;
 
 	min = INT_MAX;
@@ -63,10 +67,10 @@ t_stack	*is_min(t_stack **s)
 	{
 		if (temp->number < min)
 		{
-			goodcase = temp;
+			stack_min = temp;
 			min = temp->number;
 		}
 		temp = temp->next;
 	}
-	return (temp);
+	return (stack_min);
 }
