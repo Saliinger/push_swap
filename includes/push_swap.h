@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 09:35:14 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/25 20:47:03 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/29 13:33:19 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,19 +30,20 @@ typedef struct s_stack
 	struct s_stack	*next;
 }					t_stack;
 //		--Check--
-void                check_in(int argc, char **argv);
+void				check_in(int argc, char **argv);
 
 //		--Sort--
 void				three_sort(t_stack **a);
 bool				is_sorted(t_stack **a);
-bool                is_sorted_big_to_low(t_stack **a);
+bool				is_sorted_big_to_low(t_stack **a);
 t_stack				*get_cheapest(t_stack **s);
 void				a_b(t_stack **a, t_stack **b);
 void				reverse_ab(t_stack **a, t_stack **b, t_stack *cheapest);
 void				rotate_ab(t_stack **a, t_stack **b, t_stack *cheapest);
 void				ft_sort(t_stack **a, t_stack **b);
-void                rotate_ba(t_stack **a, t_stack **b, t_stack *cheapest);
-void	            reverse_rotate_ba(t_stack **a, t_stack **b, t_stack *cheapest);
+void				rotate_ba(t_stack **a, t_stack **b, t_stack *cheapest);
+void				reverse_rotate_ba(t_stack **a, t_stack **b,
+						t_stack *cheapest);
 void				b_a(t_stack **a, t_stack **b);
 
 //      --t_list--
@@ -52,8 +53,6 @@ int					ft_lstsize2(t_stack *lst);
 
 //		--Init--
 void				ft_init(int argc, char **argv, t_stack **a);
-void				split_init(char **argv, t_stack **a);
-void				unsplit_init(char **argv, t_stack **a);
 void				median_init(t_stack **s);
 void				index_init(t_stack **s);
 void				push_cost_init(t_stack **a, t_stack **b);
@@ -61,7 +60,7 @@ void				target_a_init(t_stack **a, t_stack **b);
 void				cheapest_init(t_stack **s);
 void				init_b(t_stack **a, t_stack **b);
 void				init_a(t_stack **a, t_stack **b);
-void                target_b_init(t_stack **a, t_stack **b);
+void				target_b_init(t_stack **a, t_stack **b);
 
 //		--Rotate--
 int					rotate(t_stack **stack);
@@ -85,6 +84,6 @@ int					sb(t_stack **b);
 void				ft_free(t_stack **stack);
 void				ft_error(void);
 t_stack				*is_max(t_stack **s);
-t_stack             *is_min(t_stack **s);
+t_stack				*is_min(t_stack **s);
 
 #endif

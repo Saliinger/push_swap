@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atoi_long.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 11:46:19 by anoukan           #+#    #+#             */
-/*   Updated: 2023/10/30 13:17:38 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/29 13:37:27 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 long	ft_atoi_long(const char *str)
 {
-	int		    i;
-	long		number;
-	long		signe;
-	char	    *cstr;
+	int		i;
+	long	number;
+	long	signe;
+	char	*cstr;
 
 	i = 0;
 	number = 0;
@@ -40,4 +40,3 @@ long	ft_atoi_long(const char *str)
 	}
 	return (signe * number);
 }
-

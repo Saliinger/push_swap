@@ -1,8 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/29 13:36:57 by anoukan           #+#    #+#             */
+/*   Updated: 2024/05/29 13:40:47 by anoukan          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "./includes/push_swap.h"
 
-int main(void)
+int	main(void)
 {
-    ft_printf("%d\n", ft_atoi_long("2147483648"));
-    ft_printf("%d\n", ft_atoi_long("-2147483649"));
-    return (0);
+	printf("%ld\n", ft_atoi_long("2147483648"));
+	printf("%ld\n", ft_atoi_long("-2147483649"));
+    printf("real atoi\n%d\n", atoi("2147483648"));
+	printf("%d\n", atoi("-2147483649"));
+	return (0);
 }

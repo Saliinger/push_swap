@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 13:30:46 by anoukan           #+#    #+#             */
-/*   Updated: 2024/05/29 13:30:49 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/05/29 13:52:54 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,18 @@ static bool	only_number(char **argv)
 	return (true);
 }
 
+static void	free_num(char **num_lst)
+{
+	int	i;
+
+	i = 0;
+	while (num_lst[i])
+	{
+		free(num_lst[i]);
+		i++;
+	}
+}
+
 void	check_in(int argc, char **argv)
 {
 	char	**num_lst;
@@ -63,8 +75,10 @@ void	check_in(int argc, char **argv)
 		num_lst = ft_split(argv[1], ' ');
 	else
 		num_lst = argv;
-	if ((only_number(num_lst)) == false)
+	if (only_number(num_lst) == false || in_limits(num_lst) == false)
+	{
+		free_num(num_lst);
 		ft_error();
-	if ((in_limits(num_lst)) == false)
-		ft_error();
+	}
+	free_num(num_lst);
 }
