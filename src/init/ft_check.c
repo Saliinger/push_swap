@@ -11,8 +11,8 @@ static bool in_limits(char **argv)
     i = 1;
     while (argv[i])
     {
-        if(ft_atoi(argv[i]) <= INT_MAX || ft_atoi(argv[i]) >= INT_MIN)
-            return (false);
+        ft_printf("number : %d\n", ft_atoi(argv[i]));
+        if(ft_atoi(argv[i]) > INT_MAX || ft_atoi(argv[i]) < INT_MIN) { ft_printf("false\n"); return (false); }
         i++;
     }
     return (true);

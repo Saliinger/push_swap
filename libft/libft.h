@@ -101,4 +101,7 @@ int					ft_hexcount(unsigned int n);
 int					ft_pointertohex(unsigned long long ptr);
 int					ft_ptrlen(uintptr_t ptr);
 
+//custom
+long	            ft_atoi_long(const char *str);
+
 #endif

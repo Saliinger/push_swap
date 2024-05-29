@@ -60,7 +60,8 @@ SRC =   ft_isalpha.c\
 		ft_putstr.c \
 		ft_selector.c \
 		ft_string.c \
-		ft_uint.c
+		ft_uint.c \
+		ft_atoi_long.c
 
 BONUS = ft_lstnew_bonus.c\
 		ft_lstadd_front_bonus.c\
