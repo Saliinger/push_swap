@@ -17,8 +17,6 @@
 # include "../libft/libft.h"
 # include <limits.h>
 # include <stdbool.h>
-# include <stdio.h>
-# include <unistd.h>
 
 //		--Struct--
 typedef struct s_stack
@@ -31,7 +29,8 @@ typedef struct s_stack
 	struct s_stack	*target;
 	struct s_stack	*next;
 }					t_stack;
-//		--Functions--
+//		--Check--
+void                check_in(int argc, char **argv);
 
 //		--Sort--
 void				three_sort(t_stack **a);
@@ -48,8 +47,6 @@ void				b_a(t_stack **a, t_stack **b);
 
 //      --t_list--
 t_stack				*ft_lstnew2(int number);
-void				ft_lstadd_back2(t_stack **lst, t_stack *new);
-t_stack				*ft_lstlast2(t_stack *lst);
 void				ft_lstadd_front2(t_stack **lst, t_stack *new);
 int					ft_lstsize2(t_stack *lst);
 
@@ -70,7 +67,6 @@ void                target_b_init(t_stack **a, t_stack **b);
 int					rotate(t_stack **stack);
 int					ra(t_stack **a);
 int					rb(t_stack **b);
-int					rotate_rotate(t_stack **a, t_stack **b);
 //		--Push--
 int					push(t_stack **to, t_stack **from);
 int					pa(t_stack **a, t_stack **b);
@@ -87,8 +83,6 @@ int					sb(t_stack **b);
 
 //		--Utils--
 void				ft_free(t_stack **stack);
-void				ft_print(t_stack **a);
-void	            ft_print_no(t_stack **stack);
 void				ft_error(void);
 t_stack				*is_max(t_stack **s);
 t_stack             *is_min(t_stack **s);

@@ -26,11 +26,12 @@ void	ft_free(t_stack **stack)
 		free(temp);
 		temp = next;
 	}
+    free(stack);
 }
 
 void	ft_error(void)
 {
-	ft_printf("ERROR");
+	ft_printf("Error\n");
 	exit(EXIT_FAILURE);
 }
 

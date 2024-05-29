@@ -17,6 +17,9 @@ int	main(int argc, char **argv)
 	t_stack	**a;
 	t_stack	**b;
 
+    if(argc < 2)
+        return (0);
+    check_in(argc, argv);
 	a = (t_stack **)malloc(sizeof(t_stack **));
 	b = (t_stack **)malloc(sizeof(t_stack **));
 	*a = NULL;

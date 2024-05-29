@@ -12,23 +12,6 @@
 
 #include "../../includes/push_swap.h"
 
-bool	is_sorted_big_to_low(t_stack **a)
-{
-	t_stack	*temp;
-	int		i;
-
-	temp = *a;
-	i = temp->number;
-	while (temp)
-	{
-		if (i < temp->number)
-			return (false);
-		i = temp->number;
-		temp = temp->next;
-	}
-	return (true);
-}
-
 bool	is_sorted(t_stack **a)
 {
 	t_stack	*temp;

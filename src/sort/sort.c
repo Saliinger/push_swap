@@ -35,6 +35,7 @@ void	ft_sort(t_stack **a, t_stack **b)
 		three_sort(a);
 	else if (ft_lstsize2(*a) > 3)
 	{
+
 		pb(b, a);
 		pb(b, a);
 		while (ft_lstsize2(*a) >= 4)

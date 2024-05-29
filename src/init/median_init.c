@@ -12,16 +12,6 @@
 
 #include "../../includes/push_swap.h"
 
-void	print_stack(t_stack *temp)
-{
-	while (temp)
-	{
-		if (temp->next == NULL)
-			break ;
-		temp = temp->next;
-	}
-}
-
 void	median_init(t_stack **s)
 {
 	int		i;
