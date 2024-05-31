@@ -44,7 +44,7 @@ void	ft_init(int argc, char **argv, t_stack **a)
 		new = ft_lstnew2(ft_atoi(num_lst[i]));
 		if (!new)
 			ft_free(a);
-		ft_lstadd_front2(a, new);
+		ft_lstadd_back2(a, new);
 		i++;
 	}
 	if (argc == 2)

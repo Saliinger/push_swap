@@ -50,6 +50,7 @@ void				b_a(t_stack **a, t_stack **b);
 t_stack				*ft_lstnew2(int number);
 void				ft_lstadd_front2(t_stack **lst, t_stack *new);
 int					ft_lstsize2(t_stack *lst);
+void                ft_lstadd_back2(t_stack **lst, t_stack *new);
 
 //		--Init--
 void				ft_init(int argc, char **argv, t_stack **a);

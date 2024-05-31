@@ -45,3 +45,22 @@ void	ft_lstadd_front2(t_stack **lst, t_stack *new)
 		*lst = new;
 	}
 }
+
+
+void	ft_lstadd_back2(t_stack **lst, t_stack *new)
+{
+	t_stack	*temp;
+
+	if (lst && new)
+	{
+		if (!*lst)
+			*lst = new;
+		else
+		{
+			temp = *lst;
+			while (temp->next)
+				temp = temp->next;
+			temp->next = new;
+		}
+	}
+}
