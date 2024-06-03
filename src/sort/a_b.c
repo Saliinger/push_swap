@@ -54,5 +54,4 @@ void	a_b(t_stack **a, t_stack **b)
 	else
 		reverse_ab(a, b, cheapest);
 	pb(b, a);
-	free(cheapest);
 }

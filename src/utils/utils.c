@@ -22,7 +22,7 @@ void	ft_free(t_stack **stack)
 	temp = *stack;
 	while (temp)
 	{
-		next = temp->next;
+        next = temp->next;
 		free(temp);
 		temp = next;
 	}
@@ -79,8 +79,7 @@ void ft_print(t_stack **stack)
 {
     while (*stack)
     {
-        ft_printf("number : %d, index : %d\n", (*stack)->number, (*stack)->index);
+        ft_printf("number : %d\n", (*stack)->number);
         *stack =(*stack)->next;
     }
-    printf("done");
 }

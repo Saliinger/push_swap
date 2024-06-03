@@ -74,7 +74,8 @@ void	check_in(int argc, char **argv)
 		num_lst = argv;
 	if (only_number(num_lst) == false || in_limits(num_lst) == false)
 	{
-		free_num(num_lst);
+        if (argc == 2)
+            free_num(num_lst);
 		ft_error();
 	}
 	if (argc == 2)

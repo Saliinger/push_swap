@@ -23,6 +23,7 @@ int	push(t_stack **to, t_stack **from)
 	new = ft_lstnew2(temp->number);
 	ft_lstadd_front2(to, new);
 	*from = (*from)->next;
+    free(temp);
 	return (0);
 }
 

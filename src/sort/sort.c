@@ -51,6 +51,4 @@ void	ft_sort(t_stack **a, t_stack **b)
 		}
 	}
 	order(a);
-	ft_free(a);
-	ft_free(b);
 }

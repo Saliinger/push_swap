@@ -27,5 +27,7 @@ int	main(int argc, char **argv)
 	ft_init(argc, argv, a);
 	if (!is_sorted(a))
 		ft_sort(a, b);
+    ft_free(a);
+    ft_free(b);
 	return (0);
 }
