@@ -20,7 +20,7 @@ void	index_init(t_stack **s)
 	temp = *s;
 	i = 0;
 	while (temp)
-	{
+    {
 		temp->index = i;
 		temp = temp->next;
 		i++;

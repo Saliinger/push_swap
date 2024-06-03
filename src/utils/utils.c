@@ -75,12 +75,12 @@ t_stack	*is_min(t_stack **s)
 	return (stack_min);
 }
 
-//void ft_print(t_stack **stack)
-//{
-//    while (*stack)
-//    {
-//        printf("%d\n", (*stack)->number);
-//        *stack =(*stack)->next;
-//    }
-//    printf("done");
-//}
+void ft_print(t_stack **stack)
+{
+    while (*stack)
+    {
+        ft_printf("number : %d, index : %d\n", (*stack)->number, (*stack)->index);
+        *stack =(*stack)->next;
+    }
+    printf("done");
+}

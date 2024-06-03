@@ -15,13 +15,14 @@
 int	push(t_stack **to, t_stack **from)
 {
 	t_stack	*temp;
+	t_stack	*new;
 
 	if (ft_lstsize2(*from) == 0)
 		return (-1);
 	temp = *from;
-    *from = temp->next;
-	temp->next = *to;
-    *to = temp;
+	new = ft_lstnew2(temp->number);
+	ft_lstadd_front2(to, new);
+	*from = (*from)->next;
 	return (0);
 }
 

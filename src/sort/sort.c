@@ -29,15 +29,6 @@ void	order(t_stack **s)
 	}
 }
 
-// static void	ft_print(t_stack **s)
-// {
-// 	while (*s)
-// 	{
-// 		ft_printf("%d\n", (*s)->number);
-// 		(*s) = (*s)->next;
-// 	}
-// }
-
 void	ft_sort(t_stack **a, t_stack **b)
 {
 	if (ft_lstsize2(*a) <= 3)
@@ -45,14 +36,14 @@ void	ft_sort(t_stack **a, t_stack **b)
 	else if (ft_lstsize2(*a) > 3)
 	{
 		pb(b, a);
-		pb(b, a);
+		if (ft_lstsize2(*a) > 4)
+            pb(b, a);
 		while (ft_lstsize2(*a) >= 4)
 		{
 			init_a(a, b);
 			a_b(a, b);
 		}
 		three_sort(a);
-		init_b(a, b);
 		while (*b)
 		{
 			init_b(a, b);

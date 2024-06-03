@@ -86,5 +86,6 @@ void				ft_free(t_stack **stack);
 void				ft_error(void);
 t_stack				*is_max(t_stack **s);
 t_stack				*is_min(t_stack **s);
+void ft_print(t_stack **stack);
 
 #endif
