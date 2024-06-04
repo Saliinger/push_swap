@@ -12,20 +12,44 @@
 
 #include "../../includes/push_swap.h"
 
-// check :
-// - if only number
-// - if <= INT_MAX || >= INT_MIN
+static bool double_int(char **argv)
+{
+    int i;
+    int j;
+    int num;
+    int check;
+
+    i = 1;
+    while(argv[i])
+    {
+        num = ft_atoi(argv[i]);
+        j = 1;
+        while(argv[j])
+        {
+            check = ft_atoi(argv[j]);
+            if(num != check || i == j)
+                j++;
+            else
+                return (false);
+        }
+        i++;
+    }
+    return (true);
+}
 
 static bool	in_limits(char **argv)
 {
 	int	i;
+    long num;
 
 	i = 1;
 	while (argv[i])
 	{
-		if (ft_atoi(argv[i]) > INT_MAX || ft_atoi(argv[i]) < INT_MIN)
-			return (false);
-		i++;
+        num = ft_atoi_long(argv[i]);
+		if (num <= INT_MAX && num >= INT_MIN)
+            i++;
+        else
+            return (false);
 	}
 	return (true);
 }
@@ -72,12 +96,15 @@ void	check_in(int argc, char **argv)
 		num_lst = ft_split(argv[1], ' ');
 	else
 		num_lst = argv;
-	if (only_number(num_lst) == false || in_limits(num_lst) == false)
+	if (only_number(num_lst) == true && in_limits(num_lst) == true && double_int(num_lst) == true)
 	{
         if (argc == 2)
             free_num(num_lst);
-		ft_error();
 	}
-	if (argc == 2)
-		free_num(num_lst);
+	else
+    {
+        if (argc == 2)
+            free_num(num_lst);
+        ft_error();
+    }
 }
