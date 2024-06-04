@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 13:30:46 by anoukan           #+#    #+#             */
-/*   Updated: 2024/06/04 14:53:16 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/06/04 16:20:59 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,8 @@ void	check_in(int argc, char **argv)
 {
 	char	**num_lst;
 
+	if (argv[1][0] == '\0')
+		ft_error();
 	if (argc == 2)
 		num_lst = ft_split(argv[1], ' ');
 	else

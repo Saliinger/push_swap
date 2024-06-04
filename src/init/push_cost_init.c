@@ -6,11 +6,29 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 20:21:34 by anoukan           #+#    #+#             */
-/*   Updated: 2024/05/28 14:32:20 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/06/04 16:32:26 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
+static void	calcul_above(t_stack *node, int size_a, int size_b)
+{
+	if (node->target->above_median == 1)
+		node->push_cost += (size_a - node->index) + node->target->index;
+	else
+		node->push_cost += (size_a - node->index) + (size_b
+				- node->target->index);
+}
+
+static void	calcul_under(t_stack *node, int size_a, int size_b)
+{
+	if (node->target->above_median == 1)
+		node->push_cost += (size_a - node->index) + node->target->index;
+	else
+		node->push_cost += (size_a - node->index) + (size_b
+				- node->target->index);
+}
 
 void	push_cost_init(t_stack **a, t_stack **b)
 {
@@ -25,22 +43,9 @@ void	push_cost_init(t_stack **a, t_stack **b)
 	{
 		temp_a->push_cost = 1;
 		if (temp_a->above_median == 1)
-		{
-			if (temp_a->target->above_median == 1)
-				temp_a->push_cost += temp_a->index + temp_a->target->index;
-			else
-				temp_a->push_cost += temp_a->index + (size_b
-						- temp_a->target->index);
-		}
+			calcul_above(temp_a, size_a, size_b);
 		else
-		{
-			if (temp_a->target->above_median == 1)
-				temp_a->push_cost += (size_a - temp_a->index)
-					+ temp_a->target->index;
-			else
-				temp_a->push_cost += (size_a - temp_a->index) + (size_b
-						- temp_a->target->index);
-		}
+			calcul_under(temp_a, size_a, size_b);
 		temp_a = temp_a->next;
 	}
 }
