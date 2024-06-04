@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 09:34:52 by anoukan           #+#    #+#             */
-/*   Updated: 2024/05/29 16:40:43 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/06/04 14:53:03 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(int argc, char **argv)
 	ft_init(argc, argv, a);
 	if (!is_sorted(a))
 		ft_sort(a, b);
-    ft_free(a);
-    ft_free(b);
+	ft_free(a);
+	ft_free(b);
 	return (0);
 }

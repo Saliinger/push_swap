@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   target_b_init.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/04 14:56:57 by anoukan           #+#    #+#             */
+/*   Updated: 2024/06/04 14:59:14 by anoukan          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/push_swap.h"
 
 void	target_b_init(t_stack **a, t_stack **b)
@@ -7,7 +19,6 @@ void	target_b_init(t_stack **a, t_stack **b)
 	t_stack	*max_a;
 	t_stack	*min_a;
 	long	match_diff;
-	long	diff;
 
 	max_a = is_max(a);
 	min_a = is_min(a);
@@ -25,10 +36,9 @@ void	target_b_init(t_stack **a, t_stack **b)
 			{
 				if (temp_a->number > temp_b->number)
 				{
-					diff = temp_a->number - temp_b->number;
-					if (diff < match_diff)
+					if (temp_a->number - temp_b->number < match_diff)
 					{
-						match_diff = diff;
+						match_diff = temp_a->number - temp_b->number;
 						temp_b->target = temp_a;
 					}
 				}

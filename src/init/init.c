@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 14:59:11 by anoukan           #+#    #+#             */
-/*   Updated: 2024/06/03 14:35:16 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/06/04 14:54:38 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,11 @@ void	ft_init(int argc, char **argv, t_stack **a)
 	while (num_lst[i])
 	{
 		new = ft_lstnew2(ft_atoi(num_lst[i]));
-		if (!new) {
-            ft_free(a);
-            ft_error();
-        }
+		if (!new)
+		{
+			ft_free(a);
+			ft_error();
+		}
 		ft_lstadd_back2(a, new);
 		i++;
 	}

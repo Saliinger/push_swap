@@ -6,29 +6,28 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 14:22:36 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/24 23:23:00 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/06/04 14:55:22 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int reverse_rotate(t_stack **stack)
+int	reverse_rotate(t_stack **stack)
 {
-    t_stack *second_last;
-    t_stack *last;
+	t_stack	*second_last;
+	t_stack	*last;
 
-    if (ft_lstsize2(*stack) < 2)
-        return (-1);
-    second_last = *stack;
-    while (second_last->next && second_last->next->next)
-        second_last = second_last->next;
-    last = second_last->next;
-    second_last->next = NULL;
-    last->next = *stack;
-    *stack = last;
-    return (0);
+	if (ft_lstsize2(*stack) < 2)
+		return (-1);
+	second_last = *stack;
+	while (second_last->next && second_last->next->next)
+		second_last = second_last->next;
+	last = second_last->next;
+	second_last->next = NULL;
+	last->next = *stack;
+	*stack = last;
+	return (0);
 }
-
 
 int	rra(t_stack **a)
 {

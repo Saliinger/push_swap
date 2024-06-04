@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 09:35:14 by anoukan           #+#    #+#             */
-/*   Updated: 2024/05/29 13:33:19 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/06/04 14:53:26 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void				b_a(t_stack **a, t_stack **b);
 t_stack				*ft_lstnew2(int number);
 void				ft_lstadd_front2(t_stack **lst, t_stack *new);
 int					ft_lstsize2(t_stack *lst);
-void                ft_lstadd_back2(t_stack **lst, t_stack *new);
+void				ft_lstadd_back2(t_stack **lst, t_stack *new);
 
 //		--Init--
 void				ft_init(int argc, char **argv, t_stack **a);
@@ -86,6 +86,6 @@ void				ft_free(t_stack **stack);
 void				ft_error(void);
 t_stack				*is_max(t_stack **s);
 t_stack				*is_min(t_stack **s);
-void ft_print(t_stack **stack);
+void				ft_print(t_stack **stack);
 
 #endif

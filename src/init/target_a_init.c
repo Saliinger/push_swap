@@ -6,15 +6,11 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 20:25:06 by anoukan           #+#    #+#             */
-/*   Updated: 2024/05/29 16:26:36 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/06/04 14:58:33 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
-
-// initialise target in the stack a
-
-// the target is the closest lowest and if there is none closet lowest it'll target the is_max(b)
 
 void	target_a_init(t_stack **a, t_stack **b)
 {
@@ -23,7 +19,6 @@ void	target_a_init(t_stack **a, t_stack **b)
 	t_stack	*max_b;
 	t_stack	*min_b;
 	long	match_diff;
-	long	diff;
 
 	max_b = is_max(b);
 	min_b = is_min(b);
@@ -41,10 +36,9 @@ void	target_a_init(t_stack **a, t_stack **b)
 			{
 				if (temp_a->number > temp_b->number)
 				{
-					diff = temp_a->number - temp_b->number;
-					if (diff < match_diff)
+					if (temp_a->number - temp_b->number < match_diff)
 					{
-						match_diff = diff;
+						match_diff = temp_a->number - temp_b->number;
 						temp_a->target = temp_b;
 					}
 				}

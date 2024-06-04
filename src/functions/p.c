@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 14:39:17 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/23 14:36:34 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/06/04 14:55:34 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	push(t_stack **to, t_stack **from)
 	new = ft_lstnew2(temp->number);
 	ft_lstadd_front2(to, new);
 	*from = (*from)->next;
-    free(temp);
+	free(temp);
 	return (0);
 }
 

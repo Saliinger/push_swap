@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 15:23:52 by anoukan           #+#    #+#             */
-/*   Updated: 2024/05/29 17:07:36 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/06/04 14:53:48 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ft_sort(t_stack **a, t_stack **b)
 	{
 		pb(b, a);
 		if (ft_lstsize2(*a) > 4)
-            pb(b, a);
+			pb(b, a);
 		while (ft_lstsize2(*a) >= 4)
 		{
 			init_a(a, b);

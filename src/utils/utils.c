@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 21:20:52 by anoukan           #+#    #+#             */
-/*   Updated: 2024/05/29 17:23:09 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/06/04 14:53:41 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_free(t_stack **stack)
 	temp = *stack;
 	while (temp)
 	{
-        next = temp->next;
+		next = temp->next;
 		free(temp);
 		temp = next;
 	}
@@ -37,7 +37,7 @@ void	ft_error(void)
 
 t_stack	*is_max(t_stack **s)
 {
-    int     max;
+	int		max;
 	t_stack	*stack_max;
 	t_stack	*temp;
 
@@ -46,10 +46,10 @@ t_stack	*is_max(t_stack **s)
 	while (temp)
 	{
 		if (temp->number > max)
-        {
-            max = temp->number;
-            stack_max = temp;
-        }
+		{
+			max = temp->number;
+			stack_max = temp;
+		}
 		temp = temp->next;
 	}
 	return (stack_max);
@@ -75,11 +75,11 @@ t_stack	*is_min(t_stack **s)
 	return (stack_min);
 }
 
-void ft_print(t_stack **stack)
+void	ft_print(t_stack **stack)
 {
-    while (*stack)
-    {
-        ft_printf("number : %d\n", (*stack)->number);
-        *stack =(*stack)->next;
-    }
+	while (*stack)
+	{
+		ft_printf("number : %d\n", (*stack)->number);
+		*stack = (*stack)->next;
+	}
 }
