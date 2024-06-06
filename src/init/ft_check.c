@@ -63,9 +63,11 @@ static bool	only_number(char **argv)
 	while (argv[i])
 	{
 		j = 0;
+        if (argv[i][j] == '-')
+            j++;
 		while (argv[i][j])
 		{
-			if (!(ft_isdigit(argv[i][j])) && argv[i][j] != '-')
+			if (!(ft_isdigit(argv[i][j])))
 				return (false);
 			else
 				j++;
