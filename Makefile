@@ -12,31 +12,38 @@
 
 CC = cc
 NAME = push_swap
-SRC_DIR = src
-UTILS_DIR = $(SRC_DIR)/utils
-FONCTION_DIR = $(SRC_DIR)/functions
-INIT_DIR = $(SRC_DIR)/init
-SORT_DIR = $(SRC_DIR)/sort
 
-# List all source files
-FUNCTION = $(wildcard $(FONCTION_DIR)/*.c)
-UTILS = $(wildcard $(UTILS_DIR)/*.c)
-SRC = $(wildcard $(SRC_DIR)/*.c)
-INIT = $(wildcard $(INIT_DIR)/*.c)
-SORT = $(wildcard $(SORT_DIR)/*.c)
+SRCS = src/functions/r.c \
+		src/functions/rr.c \
+		src/functions/s.c \
+		src/functions/p.c \
+		src/init/cheapest_init.c \
+		src/init/init_a.c \
+		src/init/init_b.c \
+		src/init/target_a_init.c \
+		src/init/median_init.c \
+		src/init/target_b_init.c \
+		src/init/index_init.c \
+		src/init/ft_check.c \
+		src/init/push_cost_init.c \
+		src/init/init.c \
+		src/sort/a_b.c \
+		src/sort/b_a.c \
+		src/sort/3_sort.c \
+		src/sort/is_sorted.c \
+		src/sort/get_cheapest.c \
+		src/sort/sort.c \
+		src/utils/t_list.c \
+		src/utils/utils.c \
+		src/push_swap.c \
 
-# Generate object file paths for all source files
-OBJ_SRC = $(SRC:%.c=%.o)
-OBJ_FUNCTION = $(FUNCTION:%.c=%.o)
-OBJ_UTILS = $(UTILS:%.c=%.o)
-OBJ_SORT = $(SORT:%.c=%.o)
-OBJ_INIT = $(INIT:%.c=%.o)
+OBJS        := $(SRCS:.c=.o)
 
-# Combine object files from all sources
-OBJ = $(OBJ_SRC) $(OBJ_FUNCTION) $(OBJ_UTILS) $(OBJ_INIT) $(OBJ_SORT)
+.c.o:
+	$(CC) ${FLAGS} -c $< -o $(<:.c=.o)
 
 # Compilation flags
-FLAGS = -Wall -Wextra -Werror -g3 #-fsanitize=address
+FLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
 
 # Library flags
 LIBS = -L./libft/ -lft
@@ -45,19 +52,15 @@ LIBS = -L./libft/ -lft
 
 all: lib $(NAME)
 
-$(NAME): $(OBJ)
-	$(CC) $(FLAGS) $(OBJ) -o $(NAME) $(LIBS)
-
-%.o: %.c
-	$(CC) $(FLAGS) -c $< -o $@
+$(NAME): $(OBJS)
+	$(CC) $(FLAGS) $(OBJS) -o $(NAME) $(LIBS)
 
 lib:
-	@echo "Compiling in libft"
 	@$(MAKE) -C ./libft
 
 clean:
 	@$(MAKE) -C ./libft clean
-	rm -f $(OBJ)
+	rm -f $(OBJS)
 
 fclean: clean
 	@$(MAKE) -C ./libft fclean
