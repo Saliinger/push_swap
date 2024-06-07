@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 13:30:46 by anoukan           #+#    #+#             */
-/*   Updated: 2024/06/06 17:57:13 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/06/07 09:16:01 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,12 @@ static bool	only_number(char **argv)
 	while (argv[i])
 	{
 		j = 0;
-        if (argv[i][j] == '-')
-        {
-            j++;
-            if (!argv[i][j])
-                return (false);
-        }
+		if (argv[i][j] == '-')
+		{
+			j++;
+			if (!argv[i][j])
+				return (false);
+		}
 		while (argv[i][j])
 		{
 			if (!(ft_isdigit(argv[i][j])))

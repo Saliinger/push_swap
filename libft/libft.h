@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 09:50:46 by anoukan           #+#    #+#             */
-/*   Updated: 2024/04/15 14:20:19 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/06/07 09:16:51 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ int					ft_hexcount(unsigned int n);
 int					ft_pointertohex(unsigned long long ptr);
 int					ft_ptrlen(uintptr_t ptr);
 
-//custom
-long	            ft_atoi_long(const char *str);
+// custom
+long				ft_atoi_long(const char *str);
 
 #endif
