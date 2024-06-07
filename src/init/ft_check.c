@@ -19,7 +19,7 @@ static bool	double_int(char **argv)
 	int	num;
 	int	check;
 
-	i = 1;
+	i = 0;
 	while (argv[i])
 	{
 		num = ft_atoi(argv[i]);
@@ -42,7 +42,7 @@ static bool	in_limits(char **argv)
 	int		i;
 	long	num;
 
-	i = 1;
+	i = 0;
 	while (argv[i])
 	{
 		num = ft_atoi_long(argv[i]);
@@ -59,7 +59,7 @@ static bool	only_number(char **argv)
 	int	i;
 	int	j;
 
-	i = 1;
+	i = 0;
 	while (argv[i])
 	{
 		j = 0;
@@ -103,7 +103,7 @@ void	check_in(int argc, char **argv)
 	if (argc == 2)
 		num_lst = ft_split(argv[1], ' ');
 	else
-		num_lst = argv;
+		num_lst = &argv[1];
 	if (only_number(num_lst) == true && in_limits(num_lst) == true
 		&& double_int(num_lst) == true)
 	{
