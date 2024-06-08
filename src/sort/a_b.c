@@ -12,46 +12,37 @@
 
 #include "../../includes/push_swap.h"
 
-void	rotate_ab(t_stack **a, t_stack **b, t_stack *cheapest)
+static long average_node(t_stack **s)
 {
-	while (*a != cheapest)
-		ra(a);
-	if (cheapest->target->above_median == 1)
-	{
-		while ((*b)->number != cheapest->target->number)
-			rb(b);
-	}
-	else
-	{
-		while ((*b)->number != cheapest->target->number)
-			rrb(b);
-	}
-}
+    long average;
+    long effective;
+    long res;
 
-void	reverse_ab(t_stack **a, t_stack **b, t_stack *cheapest)
-{
-	while (*a != cheapest)
-		rra(a);
-	if (cheapest->target->above_median == 1)
-	{
-		while ((*b)->number != cheapest->target->number)
-			rb(b);
-	}
-	else
-	{
-		while ((*b)->number != cheapest->target->number)
-			rrb(b);
-	}
+    average = 0;
+    effective = 0;
+    while (*s)
+    {
+        average += (*s)->number;
+        effective++;
+        *s = (*s)->next;
+    }
+    res = average / effective;
+    return (res);
 }
 
 void	a_b(t_stack **a, t_stack **b)
 {
-	t_stack	*cheapest;
+    long average;
+    t_stack *node;
 
-	cheapest = get_cheapest(a);
-	if (cheapest->above_median == 1)
-		rotate_ab(a, b, cheapest);
+    average = average_node(a);
+    node = *a;
+	if (node->number < average)
+		pb(b, a);
 	else
-		reverse_ab(a, b, cheapest);
-	pb(b, a);
+    {
+        pb(b, a);
+        if(ft_lstsize2(*b) > 2)
+            rb(b);
+    }
 }
