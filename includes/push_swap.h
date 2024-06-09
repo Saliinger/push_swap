@@ -67,6 +67,7 @@ void				target_b_init(t_stack **a, t_stack **b);
 int					rotate(t_stack **stack);
 int					ra(t_stack **a);
 int					rb(t_stack **b);
+int                 rotate_rotate(t_stack **a, t_stack **b);
 //		--Push--
 int					push(t_stack **to, t_stack **from);
 int					pa(t_stack **a, t_stack **b);

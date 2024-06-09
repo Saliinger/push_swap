@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 22:24:07 by anoukan           #+#    #+#             */
-/*   Updated: 2024/05/29 15:19:57 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/06/09 14:42:22 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,8 @@ void	a_b(t_stack **a, t_stack **b)
     long average;
     t_stack *node;
 
-
     average = average_node(a);
-    //ft_print(a);
     node = *a;
-    //ft_print(a);
 	if (node->number < average)
 		pb(b, a);
 	else
