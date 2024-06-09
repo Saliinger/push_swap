@@ -17,14 +17,16 @@ static long average_node(t_stack **s)
     long average;
     long effective;
     long res;
+    t_stack *node;
 
     average = 0;
     effective = 0;
-    while (*s)
+    node = *s;
+    while (node)
     {
-        average += (*s)->number;
+        average += node->number;
         effective++;
-        *s = (*s)->next;
+        node = node->next;
     }
     res = average / effective;
     return (res);
@@ -35,8 +37,11 @@ void	a_b(t_stack **a, t_stack **b)
     long average;
     t_stack *node;
 
+
     average = average_node(a);
+    //ft_print(a);
     node = *a;
+    //ft_print(a);
 	if (node->number < average)
 		pb(b, a);
 	else
