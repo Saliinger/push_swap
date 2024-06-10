@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 09:35:14 by anoukan           #+#    #+#             */
-/*   Updated: 2024/06/04 14:53:26 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/06/10 15:26:03 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void				target_b_init(t_stack **a, t_stack **b);
 int					rotate(t_stack **stack);
 int					ra(t_stack **a);
 int					rb(t_stack **b);
-int                 rotate_rotate(t_stack **a, t_stack **b);
+int					rotate_rotate(t_stack **a, t_stack **b);
 //		--Push--
 int					push(t_stack **to, t_stack **from);
 int					pa(t_stack **a, t_stack **b);
